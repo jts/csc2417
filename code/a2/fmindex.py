@@ -60,6 +60,7 @@ parser.add_argument("-d", "--debug", action="store_true", help="Turn on debuggin
 parser.add_argument("-c", "--count", type=str, help="The string to count", required=True)
 args = parser.parse_args()
 
+# Read the bwt string from the input file
 bwt = open(args.bwt).read().replace('\n','')
 
 # Calculate Occ(i, a) for all i 
@@ -68,5 +69,5 @@ ranks, tots = naiveOcc(bwt)
 # Calculate the F column from the total character counts
 F = firstCol(tots)
 
-# Test the implementation by looking up the number of times a string occurs
-print count(args.count, ranks, F)
+# Count the number of occurrences of the input string
+print "%s occurs %d times" % (args.count, count(args.count, ranks, F))

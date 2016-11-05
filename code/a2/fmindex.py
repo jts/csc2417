@@ -4,7 +4,8 @@
 import argparse
 
 def naiveOcc(bw):
-    ''' Given BWT string bw, return the occurrence array Occ(i, a)
+    ''' Given BWT string bw, return the occurrence array Occ[i][a]
+        where Occ[i][a] is the number of times a occurs in BWT[0, i]
         Also returns tots: map from character to # times it appears. '''
     tots = {}
     for c in bw:
